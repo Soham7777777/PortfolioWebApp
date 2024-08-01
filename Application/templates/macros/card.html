@@ -1,0 +1,14 @@
+{% macro CardMacro(card) %}
+    <div class="col">
+        <div class="row justify-content-center">
+            <div class="card p-0 bg-dark" style="width: 18rem;">
+                <img src="{{ card.thumbnail_path }}"
+                    class="card-img-top" alt="finance form">
+                <div class="card-body">
+                    <h5 class="card-title text-light text-truncate">{{ card.title }}</h5>
+                    <a href="{{ card.preview_path }}" class="btn btn-primary">Preview</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

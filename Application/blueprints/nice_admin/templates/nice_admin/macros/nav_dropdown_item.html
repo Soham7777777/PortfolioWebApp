@@ -1,0 +1,12 @@
+{% macro NavDropdownItemMacro(nav_dropdown_item) %}
+{% if nav_dropdown_item.selected is false %}
+    {% set active = "" %}
+{% else %}
+    {% set active = "active" %}    
+{% endif %}
+<li class="nav-dropdown-item">
+    <a class="{{ active }}" hx-get="{{ nav_dropdown_item.url }}" hx-target="#main" hx-swap="outerHTML" href="">
+        <i class="bi bi-circle"></i><span>{{ nav_dropdown_item.name }}</span>
+    </a>
+</li>
+{% endmacro %}

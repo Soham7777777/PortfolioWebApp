@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='./bootstrap-5.3.3-dist/css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='./bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='./favicon.svg') }}">
+  <title>Registration</title>
+  <style>
+    i{ -webkit-text-stroke: 1px; }
+  </style>
+</head>
+<body class="m-3 border border-3 border-dark">
+
+
+    <div class="container-fluid p-4">
+
+        <div class="col-8 offset-2 text-center mb-4">
+            <u style="text-decoration: underline;text-decoration-thickness: 3px;"><h1 class="fw-bolder mb-4">REGISTRAION FORM</h1></u>
+            <p class="fs-5 fw-bold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa nulla molestias sed laudantium, aliquid natus quidem corporis. Voluptates dolorum voluptatum</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="name" class="form-label fw-bold mb-0">Name:</label>
+                    <input type="text" name="name" id="name" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="dob" class="form-label fw-bold mb-0">Date of Birth:</label>
+                    <input type="date" name="dob" id="dob" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="add1" class="form-label fw-bold mb-0">Address 1:</label>
+                    <input type="text" name="add1" id="add1" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="add2" class="form-label fw-bold mb-0">Address 2:</label>
+                    <input type="text" name="add2" id="add2" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="city" class="form-label fw-bold mb-0">Address 2:</label>
+                    <input type="text" name="city" id="city" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="phone" class="form-label fw-bold mb-0">Phone Number:</label>
+                    <div class="row row-cols-auto p-2">
+                        <div class="form-check col m-0">
+                            <input type="checkbox" name="phone" id="home" class="form-check-input">
+                            <label for="home" class="form-check-label fw-bold">Home</label>
+                        </div>
+                        <div class="form-check col m-0">
+                            <input type="checkbox" name="phone" id="cell" class="form-check-input">
+                            <label for="cell" class="form-check-label fw-bold">Cell</label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- <hr style="border: none;height: .3em;" class="bg-dark"> -->
+        <div class="text-dark my-4">
+            <hr class="opacity-75 border border-dark border-2">
+        </div>
+
+
+        <div class="container-fluid text-center fw-bolder fs-2 mb-4" style="background-color: gray;">
+            CONTACT DETAILS
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="email" class="form-label fw-bold mb-0">E-Mail:</label>
+                    <input type="email" name="email" id="email" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="bname" class="form-label fw-bold mb-0">Bussiness Name:</label>
+                    <input type="text" name="bname" id="bname" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="fathername" class="form-label fw-bold mb-0">Father's Name:</label>
+                    <input type="text" name="fathername" id="fathername" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="mothername" class="form-label fw-bold mb-0">Mother's Name:</label>
+                    <input type="text" name="mothername" id="mothername" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="other1" class="form-label fw-bold mb-0">Other 1:</label>
+                    <input type="text" name="other1" id="other1" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="other2" class="form-label fw-bold mb-0">Other 2:</label>
+                    <input type="text" name="other2" id="other2" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid text-center fw-bolder fs-2 my-4" style="background-color: gray;">
+            OTHER INFORMATIONS
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 mb-4 g-4">
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="sdate" class="form-label fw-bold mb-0">Start Date:</label>
+                    <input type="date" name="sdate" id="sdate" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="edate" class="form-label fw-bold mb-0">End Date:</label>
+                    <input type="date" name="edate" id="edate" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="time" class="form-label fw-bold mb-0">Time:</label>
+                    <input type="time" name="time" id="time" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 mb-5 g-4">
+            <div class="col col-md-8">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="apayment" class="form-label fw-bold mb-0">Annual Payment</label>
+                    <div class="container-fluid p-2" style="background-color: lightgray;border: none;">&nbsp;</div>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="container-fluid h-100" style="background-color:lightgray;">
+                    <div class="row p-2 h-100">
+                        <div class="col-8 offset-2 h-100">
+                            <div class="input-group h-100">
+                                <span class="input-group-text bg-white" style="border: none;border-radius: 0px;">$</span>
+                                <input type="text" name="apayment" id="apayment" class="form-control fw-bolder" style="border: none;border-radius: 0px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-md-8">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="tapayment" class="form-label fw-bold mb-0">Total Annual Payment</label>
+                    <div class="container-fluid p-2" style="background-color: lightgray;border: none;">&nbsp;</div>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="container-fluid h-100" style="background-color:lightgray;">
+                    <div class="row p-2 h-100">
+                        <div class="col-8 offset-2 h-100">
+                            <div class="input-group h-100">
+                                <span class="input-group-text bg-white" style="border: none;border-radius: 0px;">$</span>
+                                <input type="text" name="tapayment" id="tapayment" class="form-control fw-bolder" style="border: none;border-radius: 0px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="fs-5 fw-bold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa nulla molestias sed laudantium Lorem ipsum dolor sit.</p>
+
+        <div class="row row-cols-1 row-cols-md-2 mb-4 g-4">
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="fullname" class="form-label fw-bold mb-0">Full Name:</label>
+                    <input type="text" name="fullname" id="fullname" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="paidvia" class="form-label fw-bold mb-0">Paid Via:</label>
+                    <input type="text" name="paidvia" id="paidvia" class="form-control text-truncate p-2" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="date" class="form-label fw-bold mb-0">Date:</label>
+                    <input type="date" name="date" id="date" class="form-control text-truncate p-3" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container-fluid"  style="background-color:lightgray;">
+                    <label for="sig" class="form-label fw-bold mb-0">Signature:</label>
+                    <input type="text" name="sig" id="sig" class="form-control text-truncate p-3" style="background-color:lightgray;border: none;">
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <button class="col-12 col-md-auto btn btn-success fw-bolder text-light fs-4 px-5" type="submit">
+                Submit
+            </button>
+        </div>
+    </div>
+
+  <script src="{{ url_for('static', filename='./bootstrap-5.3.3-dist/js/bootstrap.bundle.js') }}"></script>
+</body>
+</html>

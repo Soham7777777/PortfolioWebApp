@@ -1,8 +1,11 @@
 from werkzeug import exceptions
+from werkzeug.http import HTTP_STATUS_CODES
 from typing import cast
 from flask import redirect, url_for
+from Application.ui_components import OOBComponent, ToastComponent
+import json
 
-def jsonify_default_errors(e: exceptions.HTTPException) -> tuple[dict, int]:
+def toastify_default_errors(e: exceptions.HTTPException):
         code: int
         description: str | list
         
@@ -17,9 +20,21 @@ def jsonify_default_errors(e: exceptions.HTTPException) -> tuple[dict, int]:
         else:
             description = e.description # type: ignore
             code = e.code # type: ignore
-                    
-        data = dict(description=description)
-        return data, code
+        
+        toast = ToastComponent(
+            header=HTTP_STATUS_CODES[code],
+            header_text_color='warning',
+            icon_name='patch-exclamation-fill',
+            body=description if type(description) == str else ', '.join(description)
+        )
+        oob = OOBComponent(
+            element_id='toaster',
+            tag='div',
+            hx_swap_oob='innerHTML',
+            content=toast.render()
+        )
+
+        return oob.render(), 422, {"HX-Reswap": "none", "HX-Trigger-After-Settle": json.dumps(dict(Toastify=toast.element_id))}
 
 def handle_notfound_errors(e: exceptions.NotFound):
     return redirect(url_for('home'))

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='./bootstrap-5.3.3-dist/css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='./bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='./favicon.svg') }}">
+  <title>Registration</title>
+  <style> i{ -webkit-text-stroke: 1px; } </style>
+</head>
+<body class="bg-primary">
+
+
+  <div class="container-md bg-light p-4 rounded mt-md-5">
+    <h1><u class="link-underline-info">Re</u>gistration</h1>
+
+    <div class="d-flex flex-column mt-5">
+      <form class="container-fluid p-0" action="" method="POST">
+        <h3 class="text-black-50 mb-3">Personal Details</h3>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gy-3 mb-5">
+          <div class="col">
+            <label for="fullname" class="form-label fw-medium">Full Name</label>
+            <input type="text" name="fullname" id="fullname" class="form-control text-truncate p-2" placeholder="Enter your name">
+          </div>
+          <div class="col">
+            <label for="dob" class="form-label fw-medium">Date of Birth</label>
+            <input type="date" name="dob" id="dob" class="form-control text-truncate p-2">
+          </div>
+          <div class="col">
+            <label for="email" class="form-label fw-medium">Email</label>
+            <input type="email" name="email" id="email" class="form-control text-truncate p-2" placeholder="Enter your email">
+          </div>
+          <div class="col">
+            <label for="mobileno" class="form-label fw-medium">Mobile number</label>
+            <input type="text" name="mobileno" id="mobileno" class="form-control text-truncate p-2" placeholder="Enter mobile number">
+          </div>
+            <div class="col">
+              <label for="gender" class="form-label fw-medium">Gender</label>
+              <select name="gender" id="gender" class="form-select text-truncate p-2">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="col">
+              <label for="occupation" class="form-label fw-medium">Occupation</label>
+              <input type="text" name="occupation" id="occupation" class="form-control text-truncate p-2" placeholder="Enter your occupation">
+            </div>
+        </div>
+
+        <h3 class="text-black-50 mb-3">Identity Details</h3>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gy-3 mb-4">
+          <div class="col">
+            <label for="idtype" class="form-label fw-medium">ID Type</label>
+            <input type="text" name="idtype" id="idtype" class="form-control text-truncate p-2" placeholder="Enter ID type">
+          </div>
+          <div class="col">
+            <label for="idnum" class="form-label fw-medium">ID Number</label>
+            <input type="text" name="idnum" id="idnum" class="form-control text-truncate p-2" placeholder="Enter ID number">
+          </div>
+          <div class="col">
+            <label for="issauth" class="form-label fw-medium">Issue Authority</label>
+            <input type="text" name="issauth" id="issauth" class="form-control text-truncate p-2" placeholder="Enter issue department">
+          </div>
+          <div class="col">
+            <label for="issdate" class="form-label fw-medium">Issue Date</label>
+            <input type="date" name="issdate" id="issdate" class="form-control text-truncate p-2">
+          </div>
+          <div class="col">
+            <label for="issstate" class="form-label fw-medium">Issue State</label>
+            <input type="text" name="issstate" id="issstate" class="form-control text-truncate p-2" placeholder="Enter ID issue state">
+          </div>
+          <div class="col">
+            <label for="expdate" class="form-label fw-medium">Expiry Date</label>
+            <input type="date" name="expdate" id="expdate" class="form-control text-truncate p-2">
+          </div>
+        </div>
+
+        <button type="submit" class="col-12 col-md-auto btn btn-primary px-5 fw-bold">Next <i class="bi bi-arrow-right fw-bold"></i></button>
+      </form>
+    </div>
+
+  </div>
+
+
+  <script src="{{ url_for('static', filename='./bootstrap-5.3.3-dist/js/bootstrap.bundle.js') }}"></script>
+</body>
+</html>

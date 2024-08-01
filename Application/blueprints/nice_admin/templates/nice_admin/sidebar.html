@@ -1,0 +1,14 @@
+{% from 'nice_admin/macros/nav_item.html' import NavItemMacro %}
+{% from 'nice_admin/macros/nav_dropdown.html' import NavDropdownMacro %}
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        {{ NavItemMacro(dashboard) }}
+        {{ NavDropdownMacro(tables) }}
+
+    </ul>
+
+</aside><!-- End Sidebar-->

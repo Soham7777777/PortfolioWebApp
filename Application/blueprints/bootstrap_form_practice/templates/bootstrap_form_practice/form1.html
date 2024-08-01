@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('BootstrapFormPractice.static', filename='form1.css') }}">
+    <title>Registration</title>
+</head>
+<body>
+    {% if form.errors %}
+        <br>
+        <small style="color:red"> *&nbsp;{{form.errors[0]}} </small>
+    {% endif %}
+    <h1>Student Registraion Form</h1> <br>
+    <hr>
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <div>{{ form.fname.label }} <br> {{ form.fname }}
+        {% if form.fname.errors %}
+            <br>
+            <small style="color:red"> *&nbsp;{{form.fname.errors[0]}} </small>
+        {% endif %}
+        </div>
+
+        <div>{{ form.mname.label }} <br> {{ form.mname }}
+        {% if form.mname.errors %}
+            <br>
+            <small style="color:red"> *&nbsp;{{form.mname.errors[0]}} </small>
+        {% endif %}
+        </div>
+
+        <div>{{ form.lname.label }} <br> {{ form.lname }}
+        {% if form.lname.errors %}
+            <br>
+            <small style="color:red"> *&nbsp;{{form.lname.errors[0]}} </small>
+        {% endif %}
+        </div>
+
+        <div>{{ form.course.label }} {{ form.course }}
+        {% if form.course.errors %}
+            <br>
+            <small style="color:red"> *&nbsp;{{form.course.errors[0]}} </small>
+        {% endif %}
+        </div>
+
+        <div>{{ form.gender.label }} <br> {{ form.gender }}
+        {% if form.gender.errors %}
+            <br>
+            <small style="color:red"> *&nbsp;{{form.gender.errors[0]}} </small>
+        {% endif %}
+        </div>
+
+        <div>{{ form.phone_no.label }} <br> {{ form.country_code }}
+        {% if form.country_code.errors %}
+            <br>
+            <small style="color:red"> *&nbsp;{{form.country_code.errors[0]}} </small>
+        {% endif %}
+        </div>
+
+        <div>{{ form.phone_no }}
+        {% if form.phone_no.errors %}
+            <br>
+            <small style="color:red"> *&nbsp;{{form.phone_no.errors[0]}} </small>
+        {% endif %}
+        </div>
+
+        <div>{{ form.current_address.label }} <br> {{ form.current_address }}
+        {% if form.current_address.errors %}
+            <br>
+            <small style="color:red"> *&nbsp;{{form.current_address.errors[0]}} </small>
+        {% endif %}
+        </div>
+
+        <div>{{ form.email.label }} <br> {{ form.email }}
+        {% if form.email.errors %}
+            <br>
+            <small style="color:red"> *&nbsp;{{form.email.errors[0]}} </small>
+        {% endif %}
+        </div>
+
+        <div>{{ form.password.label }} <br> {{ form.password }}
+        {% if form.password.errors %}
+            <br>
+            <small style="color:red"> *&nbsp;{{form.password.errors[0]}} </small>
+        {% endif %}
+        </div>
+
+        <div>{{ form.re_password.label }} <br> {{ form.re_password }}
+        {% if form.re_password.errors %}
+            <br>
+            <small style="color:red"> *&nbsp;{{form.re_password.errors[0]}} </small>
+        {% endif %}
+        </div>
+
+        <div>{{ form.submit }}</div>
+    </form>
+</body>
+</html>

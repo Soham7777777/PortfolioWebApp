@@ -1,0 +1,13 @@
+{% macro NavItemMacro(nav_item) %}
+{% if nav_item.selected is false %}
+    {% set collapsed = "collapsed" %}
+{% else %}
+    {% set collapsed = "" %}    
+{% endif %}
+<li class="nav-item">
+    <a class="nav-link {{ collapsed }}" hx-target="#main" hx-get="{{ nav_item.url }}" hx-swap="outerHTML" href="">
+        <i class="bi bi-{{ nav_item.icon_name }}"></i>
+        <span>{{ nav_item.name }}</span>
+    </a>
+</li>
+{% endmacro %}

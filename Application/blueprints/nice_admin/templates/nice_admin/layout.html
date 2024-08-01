@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <base href="{{ url_for('NiceAdmin.static', filename='assets/' ) }}">
+
+  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Apr 20 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  {% block header required %}
+  {% endblock %}
+
+  {% block sidebar required %}
+  {% endblock %}
+
+  {% block main required %}
+  {% endblock %}
+
+  {% block footer required %}
+  {% endblock %}
+
+  <a href="{{ url_for('NiceAdmin.home') }}#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/chart.js/chart.umd.js"></script>
+  <script src="vendor/echarts/echarts.min.js"></script>
+  <script src="vendor/quill/quill.js"></script>
+  <script src="vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="vendor/tinymce/tinymce.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+
+  <!-- Custom JS Files -->
+  <script src="{{ url_for('static', filename='htmx.min.js') }}"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let navItems = document.querySelectorAll('#sidebar .nav-item');
+      navItems.forEach(item => {
+          if(!(item.querySelector('a').classList.contains('nav-dropdown'))) {
+            item.addEventListener('click', function (event) {
+              let navItemss = document.querySelectorAll('#sidebar .nav-item');
+  
+              navItemss.forEach(itemm => {
+                let anchor = itemm.querySelector('a')
+                if (!(anchor.classList.contains('collapsed'))) {
+                  anchor.classList.add('collapsed')
+                }
+                if(anchor.classList.contains('nav-dropdown')) {
+                  new bootstrap.Collapse(anchor.getAttribute('data-bs-target'), {toggle: false}).hide()
+                  itemm.querySelectorAll('.nav-dropdown-item').forEach((dropdown_item) => {
+                    let item_anchor = dropdown_item.querySelector('a')
+                    if(item_anchor.classList.contains('active')) {
+                      item_anchor.classList.remove('active')
+                    }
+                  })
+                }
+              })
+  
+              item.querySelector('a').classList.remove('collapsed')  
+            });
+          }
+      });
+
+      let navDropdownItems = document.querySelectorAll('#sidebar .nav-dropdown-item')
+      navDropdownItems.forEach(item => {
+        item.addEventListener('click', function (event) {
+          let navItemss = document.querySelectorAll('#sidebar .nav-item');
+          let navDropdownItemss = document.querySelectorAll('#sidebar .nav-dropdown-item')
+
+          navItemss.forEach(itemm => {
+            let anchor = itemm.querySelector('a')
+            if(!(anchor.classList.contains('nav-dropdown'))) {
+              if (!(anchor.classList.contains('collapsed'))) {
+                anchor.classList.add('collapsed')
+              }
+            }
+          })
+
+          navDropdownItemss.forEach(itemm => {
+            let anchor = itemm.querySelector('a')
+            if (anchor.classList.contains('active')) {
+              anchor.classList.remove('active')
+            }
+          })
+
+          item.querySelector('a').classList.add('active')
+          event.stopPropagation();
+        })
+      })
+    });
+  </script>
+</body>
+
+</html>

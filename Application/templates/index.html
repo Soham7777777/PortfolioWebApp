@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% from 'macros/card.html' import CardMacro %}
+{% block RenderBody %}
+<div class="row row-col-1 m-3 row-col-sm-2 row-col-md-4 g-5">
+    {% for card in cards %}
+        {{ CardMacro(card) }}
+    {% endfor %}
+</div>
+{% endblock %}
